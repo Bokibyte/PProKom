@@ -21,5 +21,10 @@ public class Tools extends DataMahasiswa{
     public void getNama(int index){
         this.nama.get(index);
     }
-    public 
+    public void getAlamat(int index){
+        this.alamat.get(index);
+    }
+    public void getJurusan(int index){
+        this.jurusan.get(index);
+    }
 }
