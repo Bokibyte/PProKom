@@ -1,4 +1,11 @@
 {
+    "background.fullscreen": {
+        "images": ["file:///D:/Doc/Visual Studio Code/vscb2.png"], // urls of your images
+        "opacity": 0.95, // 0.85 ~ 0.95 recommended
+        "size": "cover", // also css, `cover` to self-adaption (recommended)，or `contain`、`200px 200px`
+        "position": "fit", // alias to `background-position`, default `center`
+        "interval": 0 // seconds of interval for carousel, default `0` to disabled.
+    }
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
