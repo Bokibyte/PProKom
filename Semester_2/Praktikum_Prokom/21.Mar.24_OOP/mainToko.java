@@ -1,13 +1,24 @@
 import java.util.Scanner;
 
 public class mainToko {
+    public static data_senin senin = new data_senin();
+    public static data_selasa selasa = new data_selasa();
+    public static data_rabu rabu = new data_rabu();
 
-    
+    public static void addFirstItem(){
+        senin.addItem("Pensil");
+        senin.addPrice(1000);
+        senin.addItem("Penggaris");
+        senin.addPrice(5000);
+        senin.addItem("Penghapus");
+        senin.addPrice(3000);
+        senin.addItem("Binder");
+        senin.addPrice(10000);
+        senin.addItem("Double Folio");
+        senin.addPrice(500);
+    }
 
     public static void setterMenu(){
-        data_senin senin = new data_senin();
-        data_selasa selasa = new data_selasa();
-        data_rabu rabu = new data_rabu();
         Scanner sc = new Scanner(System.in);
         int setterInput = 0;
         System.out.println("Tambah data pada hari:\n1. Senin\n2. Selasa\n3. Rabu");
@@ -40,9 +51,6 @@ public class mainToko {
     }
 
     public static void main(String[]args){
-        data_senin senin = new data_senin();
-        data_selasa selasa = new data_selasa();
-        data_rabu rabu = new data_rabu();
         Scanner sc = new Scanner(System.in);
         int input = 0;
         int totalPrice = 0;
