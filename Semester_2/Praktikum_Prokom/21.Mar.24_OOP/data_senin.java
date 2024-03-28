@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class data_senin {
+public class data_senin{
     private ArrayList<String> nama;
     private ArrayList<Integer> stock, price;
 
