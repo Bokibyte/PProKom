@@ -1,21 +1,65 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class mainToko {
     public static data_senin senin = new data_senin();
     public static data_selasa selasa = new data_selasa();
     public static data_rabu rabu = new data_rabu();
 
+    // Memasukan data awal ke masing-masing hari
     public static void addFirstItem(){
+
+        // Pakai random agar sedikit realis
+        Random random = new Random();
+        int stock = random.nextInt(81)+20;
+
         senin.addItem("Pensil");
         senin.addPrice(1000);
+        senin.addStock(20);
         senin.addItem("Penggaris");
         senin.addPrice(5000);
+        senin.addStock(20);
         senin.addItem("Penghapus");
         senin.addPrice(3000);
+        senin.addStock(20);
         senin.addItem("Binder");
         senin.addPrice(10000);
+        senin.addStock(20);
         senin.addItem("Double Folio");
         senin.addPrice(500);
+        senin.addStock(20);
+        
+        selasa.addItem("AK-47");
+        selasa.addPrice(8500000);
+        selasa.addStock(stock);
+        selasa.addItem("M60");
+        selasa.addPrice(206388000);
+        selasa.addStock(stock);
+        selasa.addItem("GM6 Lynx");
+        selasa.addPrice(185257000);
+        selasa.addStock(stock);
+        selasa.addItem("Denel NTW-20 Anti Material RIfle");
+        selasa.addPrice(104774340);
+        selasa.addStock(stock);
+        selasa.addItem("P90");
+        selasa.addPrice(23795475);
+        selasa.addStock(stock);
+
+        rabu.addItem("Nasi Goreng");
+        rabu.addPrice(20000);
+        selasa.addStock(stock);
+        rabu.addItem("Sate Sapi Kobe");
+        rabu.addPrice(50000);
+        selasa.addStock(stock);
+        rabu.addItem("Pempek + Kuah");
+        rabu.addPrice(18000);
+        selasa.addStock(stock);
+        rabu.addItem("Mie Sapi");
+        rabu.addPrice(25000);
+        selasa.addStock(stock);
+        rabu.addItem("Indomie Spesial");
+        rabu.addPrice(150000);
+        selasa.addStock(stock);
     }
 
     public static void setterMenu(){
@@ -48,6 +92,7 @@ public class mainToko {
         }else{
             System.out.println("input salah.");
         }   
+        sc.close();
     }
 
     public static void main(String[]args){
@@ -55,6 +100,7 @@ public class mainToko {
         int input = 0;
         int totalPrice = 0;
 
+        // Menu setter
         setterMenu();
         
         System.out.println("Tampilkan toko pada hari?\n1. Senin\2. Selasa\3. Rabu");
@@ -95,5 +141,6 @@ public class mainToko {
         }else{
             System.out.println("Input invalid.");
         }
+        sc.close();
     }
 }
