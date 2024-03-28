@@ -4,25 +4,28 @@ public class data_senin{
     private ArrayList<String> nama;
     private ArrayList<Integer> stock, price;
 
-    public void addItem(String nama){
-        this.nama.add(nama);
+    public data_senin(){
+        nama = new ArrayList<>();
     }
-    public void addStock(int stock){
-        this.stock.add(stock);
+    public void addItem(String setNama){
+        nama.add(setNama);
     }
-    public void addPrice(int price){
-        this.price.add(price);
+    public void addStock(int setStock){
+        stock.add(setStock);
+    }
+    public void addPrice(int setPrice){
+        price.add(setPrice);
     }
     public int itemAmount(){
-        return this.nama.size();
+        return nama.size();
     }
     public String getName(int index){
-        return this.nama.get(index);
+        return nama.get(index);
     }
-    public int getStock(int index){
-        return this.stock.get(index);
+    public int getStock(int index){ 
+        return stock.get(index);
     }
     public int getPrice(int index){
-        return this.price.get(index);
+        return price.get(index);
     }
 }
