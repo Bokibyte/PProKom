@@ -100,6 +100,9 @@ public class mainToko {
         int input = 0;
         int totalPrice = 0;
 
+        // Tambah data awal
+        addFirstItem();
+
         // Menu setter
         setterMenu();
         
