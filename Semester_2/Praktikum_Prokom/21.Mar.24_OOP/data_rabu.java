@@ -1,28 +1,40 @@
 import java.util.ArrayList;
 
 public class data_rabu {
-    private ArrayList<String> nama;
-    private ArrayList<Integer> stock, price;
+    public ArrayList<String> nama;
+    public ArrayList<Integer> stock, price;
 
-    public void addItem(String nama){
-        this.nama.add(nama);
+    // Konstruktor biar gak null Arraynya
+    public data_rabu(){
+        nama = new ArrayList<>();
+        stock = new ArrayList<>();
+        price = new ArrayList<>();
     }
-    public void addStock(int stock){
-        this.stock.add(stock);
+
+    // setter
+    public void addItem(String setNama){
+        nama.add(setNama);
     }
-    public void addPrice(int price){
-        this.price.add(price);
+    public void addStock(int setStock){
+        stock.add(setStock);
     }
+    public void addPrice(int setPrice){
+        price.add(setPrice);
+    }
+
+    // untuk mendapatkan index
     public int itemAmount(){
-        return this.nama.size();
+        return nama.size();
     }
+
+    // getter
     public String getName(int index){
-        return this.nama.get(index);
+        return nama.get(index);
     }
-    public int getStock(int index){
-        return this.stock.get(index);
+    public int getStock(int index){ 
+        return stock.get(index);
     }
     public int getPrice(int index){
-        return this.price.get(index);
+        return price.get(index);
     }
 }
