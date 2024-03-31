@@ -5,6 +5,7 @@ public class App {
     public static void addMenu(){
         AppMethods methods = new AppMethods();
         String input = "";
+        boolean passCheck = false;
 
         input = JOptionPane.showInputDialog(null, "Masukan VCD anda: ", "Menu Judul", JOptionPane.QUESTION_MESSAGE);
         methods.addJudul(input);
@@ -14,8 +15,17 @@ public class App {
         methods.addSutradara(input);
         input = JOptionPane.showInputDialog(null, "Masukan Publishernya: ", "Menu Publisher", JOptionPane.QUESTION_MESSAGE);
         methods.addPublisher(input);
-        input = JOptionPane.showInputDialog(null, "Masukan stok VCD anda: ", "Menu Stok", JOptionPane.QUESTION_MESSAGE);
-        methods.addStok
+        while(!passCheck){
+            try{
+                input = JOptionPane.showInputDialog(null, "Masukan stok VCD anda: ", "Menu Stok", JOptionPane.QUESTION_MESSAGE);
+                methods.addStok(Integer.parseInt(input));
+                passCheck = true;
+            }catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(null, "Input bukan integer!", "Checking Menu", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        
+        
     }
 
     public static void main(String[] args) throws Exception {
