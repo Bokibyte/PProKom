@@ -1,5 +1,28 @@
+import javax.swing.JOptionPane;
+
 public class App {
+
+    public static void addMenu(){
+        AppMethods methods = new AppMethods();
+        String input = "";
+
+        input = JOptionPane.showInputDialog(null, "Masukan VCD anda: ", "Menu Judul", JOptionPane.QUESTION_MESSAGE);
+        methods.addJudul(input);
+        input = JOptionPane.showInputDialog(null, "Masukan aktor-aktornya: ", "Menu aktor", JOptionPane.QUESTION_MESSAGE);
+        methods.addAktor(input);
+        input = JOptionPane.showInputDialog(null, "Masukan Sutradaranya: ", "Menu Sutradara", JOptionPane.QUESTION_MESSAGE);
+        methods.addSutradara(input);
+        input = JOptionPane.showInputDialog(null, "Masukan Publishernya: ", "Menu Publisher", JOptionPane.QUESTION_MESSAGE);
+        methods.addPublisher(input);
+        input = JOptionPane.showInputDialog(null, "Masukan stok VCD anda: ", "Menu Stok", JOptionPane.QUESTION_MESSAGE);
+        methods.addStok
+    }
+
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+
+        for(int i = 0; i < 5; i++){
+            
+        }
+        
     }
 }

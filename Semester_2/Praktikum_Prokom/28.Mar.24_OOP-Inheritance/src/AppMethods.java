@@ -15,6 +15,9 @@ public class AppMethods extends DataVCD {
     public void addPublisher(String addPublisher){
         this.sutradaraList.add(addPublisher);
     }
+    public void addStok(int addStok){
+        this.stokList.add(addStok);
+    }
 
     // getter
     public int getSize(){
