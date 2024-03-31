@@ -12,7 +12,7 @@ public class DataVCD {
         publisherList = new ArrayList<>();
         ratingList = new ArrayList<>();
         stokList = new ArrayList<>();
-        kategoriList = new String[3];
+        kategoriList = new String[4];
         kategoriList[0] = "Semua Umur";
         kategoriList[1] = "Anak";
         kategoriList[2] = "Remaja";

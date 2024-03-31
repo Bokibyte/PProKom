@@ -4,6 +4,8 @@ public class App {
     static AppMethods methods = new AppMethods();
     static String input;
 
+    // kumpulan method untuk menampilkan menu
+    // sengaja dibuat untuk mengatasi umpan balik tombol cancel
     public static void judulMenu(){
         input = JOptionPane.showInputDialog(null, "Masukan VCD anda: ", "Menu Judul", JOptionPane.PLAIN_MESSAGE);
         methods.addJudul(input);
