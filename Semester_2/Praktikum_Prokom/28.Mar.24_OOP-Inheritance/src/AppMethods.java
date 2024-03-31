@@ -15,6 +15,9 @@ public class AppMethods extends DataVCD {
     public void addPublisher(String addPublisher){
         this.sutradaraList.add(addPublisher);
     }
+    public void addRating(int option){
+        this.ratingList.add(this.kategoriList[option]);
+    }
     public void addStok(int addStok){
         this.stokList.add(addStok);
     }
@@ -39,6 +42,10 @@ public class AppMethods extends DataVCD {
     public String getPublisher(int index){
         String publisher = this.publisherList.get(index);
         return publisher;
+    }
+    public String getRating(int index){
+        String rating = this.ratingList.get(index);
+        return rating;
     }
     public int getStok(int index){
         int stokList = this.stokList.get(index);
