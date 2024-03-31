@@ -15,6 +15,8 @@ public class App {
         methods.addSutradara(input);
         input = JOptionPane.showInputDialog(null, "Masukan Publishernya: ", "Menu Publisher", JOptionPane.QUESTION_MESSAGE);
         methods.addPublisher(input);
+        input = String.valueOf(JOptionPane.showOptionDialog(null, "Pilih rating VCD: ", "Rating Menu", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, methods.kategoriList, methods.kategoriList[0]));
+        methods.add
         while(!passCheck){
             try{
                 input = JOptionPane.showInputDialog(null, "Masukan stok VCD anda: ", "Menu Stok", JOptionPane.QUESTION_MESSAGE);
@@ -31,7 +33,7 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         for(int i = 0; i < 5; i++){
-            
+            addMenu();
         }
         
     }
