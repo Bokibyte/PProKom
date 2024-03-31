@@ -6,8 +6,9 @@ public class App {
 
     // kumpulan method untuk menampilkan menu
     // sengaja dibuat untuk mengatasi umpan balik tombol cancel
-    public static boolean judulMenu(){
+    public static boolean judulMenu(int editIndex){
         boolean isPass = false;
+        boolean isCancel = false;
         input = JOptionPane.showInputDialog(null, "Masukan VCD anda: ", "Menu Judul", JOptionPane.QUESTION_MESSAGE);
         if(input == null){
             if(methods.getSize() == 0){
@@ -15,6 +16,9 @@ public class App {
                 isPass = false;
             }
             isPass = false;
+        }else if(!isCancel){
+            methods.addJudul(input);
+            isPass = true;
         }else{
             methods.addJudul(input);
             isPass = true;
@@ -89,24 +93,30 @@ public class App {
     }
 
     public static void main(String[] args) throws Exception {
+        int indexEdit = 0;
         boolean menuPass = false;
+
         while(true){
-            menuPass = judulMenu();
-            if(menuPass){
-                menuPass = aktorMenu();
-            }else{
-                break;
-            }if (menuPass){
-                menuPass = sutradaraMenu();
-            }if (menuPass){
-                menuPass = publisherMenu();
-            }if (menuPass){
-                menuPass = ratingMenu();
-            }if (menuPass){
-                menuPass = stokMenu();
-            }if (menuPass){
-                break;
+            indexEdit = methods.getSize();
+            while(true){
+                menuPass = judulMenu();
+                if(menuPass){
+                    menuPass = aktorMenu();
+                }else{
+                    break;
+                }if (menuPass){
+                    menuPass = sutradaraMenu();
+                }if (menuPass){
+                    menuPass = publisherMenu();
+                }if (menuPass){
+                    menuPass = ratingMenu();
+                }if (menuPass){
+                    menuPass = stokMenu();
+                }if (menuPass){
+                    break;
+                }
             }
+            break;
         }
     }
 }

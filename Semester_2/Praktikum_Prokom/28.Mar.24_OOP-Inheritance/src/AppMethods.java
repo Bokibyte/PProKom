@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class AppMethods extends DataVCD {
     
-    // setter
+    // adder
     public void addJudul(String newJudul){
         this.judulList.add(newJudul);
     }
@@ -20,6 +20,27 @@ public class AppMethods extends DataVCD {
     }
     public void addStok(int addStok){
         this.stokList.add(addStok);
+    }
+
+
+    // setter
+    public void setJudul(int editIndex, String newJudul){
+        this.judulList.set(editIndex, newJudul);
+    }
+    public void setAktor(int editIndex, String addAktor){
+        this.aktorList.set(editIndex, addAktor);
+    }
+    public void setSutradara(int editIndex, String addSutradara){
+        this.sutradaraList.set(editIndex, addSutradara);
+    }
+    public void setPublisher(int editIndex, String addPublisher){
+        this.sutradaraList.set(editIndex, addPublisher);
+    }
+    public void setRating(int editIndex, int option){
+        this.ratingList.set(editIndex, this.kategoriList[option]);
+    }
+    public void setStok(int editIndex, int addStok){
+        this.stokList.set(editIndex, addStok);
     }
 
     // getter
