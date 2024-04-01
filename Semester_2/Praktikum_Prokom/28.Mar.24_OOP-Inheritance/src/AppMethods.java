@@ -52,6 +52,8 @@ public class AppMethods extends DataVCD {
         if(input != null){
             this.judulList.set(editIndex, input);
             isDone = true;
+        }else{
+            isDone = false;
         }
         return isDone;
     }
@@ -61,6 +63,8 @@ public class AppMethods extends DataVCD {
         if(input != null){
             this.aktorList.set(editIndex, input);
             isDone = true;
+        }else{
+            isDone = false;
         }
         return isDone;
     }
@@ -69,6 +73,8 @@ public class AppMethods extends DataVCD {
         if(input != null){
             this.sutradaraList.set(editIndex, input);
             isDone = true;
+        }else{
+            isDone = false;
         }
         return isDone;
     }
@@ -77,6 +83,8 @@ public class AppMethods extends DataVCD {
         if(input != null){
             this.publisherList.set(editIndex, input);
             isDone = true;
+        }else{
+            isDone = false;
         }
         return isDone;
     }
@@ -88,6 +96,8 @@ public class AppMethods extends DataVCD {
         if(input != null){
             this.ratingList.set(editIndex, kategoriList[Integer.parseInt(input)]);
             isDone = true;
+        }else{
+            isDone = false;
         }
         return isDone;
     }
@@ -99,6 +109,8 @@ public class AppMethods extends DataVCD {
                     this.stokList.set(editIndex, Integer.parseInt(input));
                     isDone = true;
                     return isDone;
+                }else{
+                    isDone = false;
                 }
             }catch(NumberFormatException e){
                 JOptionPane.showMessageDialog(null, "Input tidak valid!", "Check Menu", JOptionPane.WARNING_MESSAGE);

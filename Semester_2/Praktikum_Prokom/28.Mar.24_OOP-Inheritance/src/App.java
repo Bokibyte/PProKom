@@ -18,7 +18,7 @@ public class App {
         int indexAt = methods.getSize()-1;
         while(checkPass != 6){
             System.out.println(methods.judulList +"  "+methods.getSize());
-            if(checkPass == 0){
+            if(checkPass == 0){System.out.println(checkPass);
                isPass = methods.JOPJudul(indexAt);
                if(isPass){
                 checkPass++;
@@ -30,7 +30,7 @@ public class App {
                 }
                }
             }
-            if(checkPass == 1){
+            if(checkPass == 1){System.out.println(checkPass);
                 isPass = methods.JOPAktor(indexAt);
                 if(isPass){
                     checkPass++;
@@ -38,7 +38,7 @@ public class App {
                     checkPass--;
                 }
             }
-            if(checkPass == 2){
+            if(checkPass == 2){System.out.println(checkPass);
                 isPass = methods.JOPSutradara(indexAt);
                 if(isPass){
                     checkPass++;
@@ -46,7 +46,7 @@ public class App {
                     checkPass--;
                 }
             }
-            if(checkPass == 3){
+            if(checkPass == 3){System.out.println(checkPass);
                 isPass = methods.JOPPublisher(indexAt);
                 if(isPass){
                     checkPass++;
@@ -54,7 +54,7 @@ public class App {
                     checkPass--;
                 }
             }
-            if(checkPass == 4){
+            if(checkPass == 4){System.out.println(checkPass);
                 isPass = methods.JOPRating(indexAt);
                 if(isPass){
                     checkPass++;
@@ -62,7 +62,7 @@ public class App {
                     checkPass--;
                 }
             }
-            if(checkPass == 5){
+            if(checkPass == 5){System.out.println(checkPass);
                 isPass = methods.JOPStok(indexAt);
                 if(isPass){
                     checkPass++;
