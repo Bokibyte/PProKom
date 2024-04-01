@@ -1,3 +1,4 @@
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 public class AppMethods extends DataVCD {
@@ -15,6 +16,15 @@ public class AppMethods extends DataVCD {
         this.stokList.add(0);
     }
 
+    // remover
+    public void removeData(int editIndex){
+        this.judulList.remove(editIndex);
+        this.aktorList.remove(editIndex);
+        this.sutradaraList.remove(editIndex);
+        this.publisherList.remove(editIndex);
+        this.ratingList.remove(editIndex);
+        this.stokList.remove(editIndex);
+    }
 
     // setter
     public void setJudul(int editIndex, String addJudul){
@@ -72,7 +82,9 @@ public class AppMethods extends DataVCD {
     }
     public boolean JOPRating(int editIndex){
         Object[] rating = {"SU", "A", "R", "D"};
-        input = JOptionPane.showOptionDialog(null, "Masukan rating VCD", "Menu Rating", JOptionPane., editIndex, null, rating, rating)
+        JComboBox optionList = new JComboBox<>(rating);
+        optionList.setSelectedIndex(0);
+        input = JOptionPane.showInputDialog(null, optionList, "Menu Rating", JOptionPane.QUESTION_MESSAGE);
         if(input != null){
             this.ratingList.set(editIndex, kategoriList[Integer.parseInt(input)]);
             isDone = true;
@@ -81,7 +93,7 @@ public class AppMethods extends DataVCD {
     }
     public boolean JOPStok(int editIndex){
         while(true){
-            
+            input = JOptionPane.showInputDialog(null, "Masukan stoknya: ", "Menu Stok", JOptionPane.QUESTION_MESSAGE);
             try{
                 if(input != null){
                     this.stokList.set(editIndex, Integer.parseInt(input));
