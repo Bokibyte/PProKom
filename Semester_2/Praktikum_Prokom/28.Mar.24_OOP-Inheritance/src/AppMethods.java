@@ -1,31 +1,24 @@
-import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class AppMethods extends DataVCD {
     
+    private String input = "";
+    private boolean isDone = false;
+
     // adder
-    public void addJudul(String newJudul){
-        this.judulList.add(newJudul);
-    }
-    public void addAktor(String addAktor){
-        this.aktorList.add(addAktor);
-    }
-    public void addSutradara(String addSutradara){
-        this.sutradaraList.add(addSutradara);
-    }
-    public void addPublisher(String addPublisher){
-        this.sutradaraList.add(addPublisher);
-    }
-    public void addRating(int option){
-        this.ratingList.add(this.kategoriList[option]);
-    }
-    public void addStok(int addStok){
-        this.stokList.add(addStok);
+    public void addData(){
+        this.judulList.add("");
+        this.aktorList.add("");
+        this.sutradaraList.add("");
+        this.publisherList.add("");
+        this.ratingList.add("");
+        this.stokList.add(0);
     }
 
 
     // setter
-    public void setJudul(int editIndex, String newJudul){
-        this.judulList.set(editIndex, newJudul);
+    public void setJudul(int editIndex, String addJudul){
+        this.judulList.set(editIndex, addJudul);
     }
     public void setAktor(int editIndex, String addAktor){
         this.aktorList.set(editIndex, addAktor);
@@ -34,13 +27,71 @@ public class AppMethods extends DataVCD {
         this.sutradaraList.set(editIndex, addSutradara);
     }
     public void setPublisher(int editIndex, String addPublisher){
-        this.sutradaraList.set(editIndex, addPublisher);
+        this.publisherList.set(editIndex, addPublisher);
     }
     public void setRating(int editIndex, int option){
         this.ratingList.set(editIndex, this.kategoriList[option]);
     }
     public void setStok(int editIndex, int addStok){
         this.stokList.set(editIndex, addStok);
+    }
+
+    // setter dengan JOptionPane
+    public boolean JOPJudul(int editIndex){
+        input = JOptionPane.showInputDialog(null, "Masukan judul VCD: ", "Menu Judul", JOptionPane.QUESTION_MESSAGE);
+        if(input != null){
+            this.judulList.set(editIndex, input);
+            isDone = true;
+        }
+        return isDone;
+    }
+
+    public boolean JOPAktor(int editIndex){
+        input = JOptionPane.showInputDialog(null, "Masukan aktornya: ", "Menu Aktor", JOptionPane.QUESTION_MESSAGE);
+        if(input != null){
+            this.aktorList.set(editIndex, input);
+            isDone = true;
+        }
+        return isDone;
+    }
+    public boolean JOPSutradara(int editIndex){
+        input = JOptionPane.showInputDialog(null, "Masukan sutradaranya: ", "Menu Sutradara", JOptionPane.QUESTION_MESSAGE);
+        if(input != null){
+            this.sutradaraList.set(editIndex, input);
+            isDone = true;
+        }
+        return isDone;
+    }
+    public boolean JOPPublisher(int editIndex){
+        input = JOptionPane.showInputDialog(null, "Masukan publishernya: ", "Menu Publisher", JOptionPane.QUESTION_MESSAGE);
+        if(input != null){
+            this.publisherList.set(editIndex, input);
+            isDone = true;
+        }
+        return isDone;
+    }
+    public boolean JOPRating(int editIndex){
+        Object[] rating = {"SU", "A", "R", "D"};
+        input = JOptionPane.showOptionDialog(null, "Masukan rating VCD", "Menu Rating", JOptionPane., editIndex, null, rating, rating)
+        if(input != null){
+            this.ratingList.set(editIndex, kategoriList[Integer.parseInt(input)]);
+            isDone = true;
+        }
+        return isDone;
+    }
+    public boolean JOPStok(int editIndex){
+        while(true){
+            
+            try{
+                if(input != null){
+                    this.stokList.set(editIndex, Integer.parseInt(input));
+                    isDone = true;
+                    return isDone;
+                }
+            }catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(null, "Input tidak valid!", "Check Menu", JOptionPane.WARNING_MESSAGE);
+            }
+        }
     }
 
     // getter
