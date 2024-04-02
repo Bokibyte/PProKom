@@ -2,16 +2,16 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 public class App {
+    private static AppMethods methods = new AppMethods();
 
     // kumpulan method untuk menampilkan menu
     // sengaja dibuat untuk mengatasi umpan balik tombol cancel
 
     public static void setMenu(){
-        AppMethods methods = new AppMethods();
         boolean isPass = false;
         int checkPass = 0;
-        int indexAt;
-        
+        int indexAt = methods.getSize();
+        methods.addData();
         System.out.println("size = "+methods.getSize());
         
         while(true){
@@ -81,12 +81,10 @@ public class App {
     public static void main(String[] args) throws Exception {
         SwingUtilities.invokeLater(new Runnable(){
             public void run(){
-                AppMethods methods = new AppMethods();
                 for(int i = 0; i < 4; i++){
                     // membuat data baru yang akan di set
                     // jika data judul lebih dari 0 maka data baru akan dihapus
                     // jika data judul 0 maka akan memaksa untuk memasukan data awal dulu
-                    methods.addData();
                     setMenu();
                 }
             }

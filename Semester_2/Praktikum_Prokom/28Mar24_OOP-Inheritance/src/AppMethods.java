@@ -7,12 +7,13 @@ public class AppMethods extends DataVCD {
 
     // adder
     public void addData(){
-        this.judulList.add("");
-        this.aktorList.add("");
-        this.sutradaraList.add("");
-        this.publisherList.add("");
-        this.ratingList.add("");
+        this.judulList.add("null");
+        this.aktorList.add("null");
+        this.sutradaraList.add("null");
+        this.publisherList.add("null");
+        this.ratingList.add("null");
         this.stokList.add(0);
+        System.out.println("Data in!");
     }
 
     // remover
