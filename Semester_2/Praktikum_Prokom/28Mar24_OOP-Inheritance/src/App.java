@@ -4,90 +4,113 @@ import javax.swing.SwingUtilities;
 public class App {
     private static AppMethods methods = new AppMethods();
 
-    // kumpulan method untuk menampilkan menu
     // sengaja dibuat untuk mengatasi umpan balik tombol cancel
+    // jika return null, maka menu input sebelumnya akan kembali
+    // biasanya terjadi jika memilih opsi cancel atau close button
 
+    // method untuk mengecek apakah menu sudah diinput
+    // dan mengembalikan poin jika menu sudah diinput
+    public static int count(boolean isPass, int passCount){
+        int count = passCount;
+        if(isPass){
+            count++;
+        }else{
+            count++;
+        }
+        return count;
+    }
+
+    // method untuk menampilkan menu
     public static void setMenu(){
+
+        // var meneteksi jika pengguna menginputkan sesuatu
         boolean isPass = false;
+
+        // var menghitung jumlah masukan
         int checkPass = 0;
+
+        // mengambil index ke x untuk mengedit data baru
         int indexAt = methods.getSize();
+
+        // membuat data baru yang akan di set
         methods.addData();
-        System.out.println("size = "+methods.getSize());
         
-        while(true){
-            System.out.println(methods.judulList);
+        // membuat pengulangan untuk loop menu agar bisa menampilkan kembali menu
+        // loop berhenti saat 6 menu sudah dimasukan input
+        while(checkPass < 6){
             if(checkPass == 0){
-                System.out.println(checkPass);
                 isPass = methods.JOPJudul(indexAt);
                 if(isPass){
                     checkPass++;
                 }else{
+
+                    // jika jumlah data hanya 1 maka akan mencegah untuk tidak input
+                    // jika jumlah data lebih dari 1 maka akan menghapus "plain data"
+                    // jadi, jika kita cancel terus maka data yang tadi ingin dimasukan tidak akan dimasukan
+                    // alternatif cara ini dengan konsep temp. karena sudah terlanjur ini yauda deh hehe
                     if(methods.judulList.size() == 1){
                         JOptionPane.showMessageDialog(null, "Data tidak boleh kosong", "Peringatan", JOptionPane.WARNING_MESSAGE);
                     }else{
                         methods.removeData(indexAt);
                     }
-                }System.out.println(methods.judulList);
+                }
             }
             if(checkPass == 1){
-                System.out.println(checkPass);
                 isPass = methods.JOPAktor(indexAt);
-                if(isPass){
-                    checkPass++;
-                }else{
-                    checkPass--;
-                }System.out.println(methods.aktorList);
+                checkPass = count(isPass, checkPass);
             }
             if(checkPass == 2){
-                System.out.println(checkPass);
                 isPass = methods.JOPSutradara(indexAt);
-                if(isPass){
-                    checkPass++;
-                }else{
-                    checkPass--;
-                }System.out.println(methods.sutradaraList);
+                checkPass = count(isPass, checkPass);
             }
             if(checkPass == 3){
-                System.out.println(checkPass);
                 isPass = methods.JOPPublisher(indexAt);
-                if(isPass){
-                    checkPass++;
-                }else{
-                    checkPass--;
-                }System.out.println(methods.publisherList);
+                checkPass = count(isPass, checkPass);
             }
             if(checkPass == 4){
-                System.out.println(checkPass);
                 isPass = methods.JOPRating(indexAt);
-                if(isPass){
-                    checkPass++;
-                }else{
-                    checkPass--;
-                }System.out.println(methods.ratingList);
+                checkPass = count(isPass, checkPass);
             }
             if(checkPass == 5){
-                System.out.println(checkPass);
                 isPass = methods.JOPStok(indexAt);
-                if(isPass){
-                    break;
-                }else{
-                    checkPass--;
-                }System.out.println(methods.stokList);
+                checkPass = count(isPass, checkPass);
             }
         }
+    }
+
+    // method untuk menampilkan data
+    public static void showData(int index){
+        System.out.print("========================================================");
+        System.out.println("\r==| Movie ke-"+(index+1)+" |");
+        System.out.println();
+        System.out.println(" Judul \t\t: "+methods.getJudul(index));
+        System.out.println(" Aktor \t\t: "+methods.getAktor(index));
+        System.out.println(" Sutradara \t: "+methods.getSutradara(index));
+        System.out.println(" Publisher \t: "+methods.getPublisher(index));
+        System.out.println(" Rating \t: "+methods.getRating(index));
+        System.out.println(" Stok \t\t: "+methods.getStok(index));
+        System.out.println("\n========================================================");
     }
 
     
     public static void main(String[] args) throws Exception {
         SwingUtilities.invokeLater(new Runnable(){
             public void run(){
-                for(int i = 0; i < 4; i++){
-                    // membuat data baru yang akan di set
-                    // jika data judul lebih dari 0 maka data baru akan dihapus
-                    // jika data judul 0 maka akan memaksa untuk memasukan data awal dulu
+
+                // var loop diisi dengan jumlah data pertama yang ingin dimasukan
+                int loop = 2;
+                for(int i = 0; i < loop; i++){
                     setMenu();
+                }
+
+                // loop untuk menampilkan data
+                System.out.println("<| Rental VCD |>");
+                for(int i = 0; i < methods.getSize(); i++){
+                    showData(i);
                 }
             }
         });
     }
 }
+
+// Selesai ~~ robust lv 5
