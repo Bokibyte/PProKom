@@ -1,4 +1,3 @@
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 public class AppMethods extends DataVCD {
@@ -89,12 +88,11 @@ public class AppMethods extends DataVCD {
         return isDone;
     }
     public boolean JOPRating(int editIndex){
-        Object[] rating = {"SU", "A", "R", "D"};
-        JComboBox optionList = new JComboBox<>(rating);
-        optionList.setSelectedIndex(0);
-        input = JOptionPane.showInputDialog(null, optionList, "Menu Rating", JOptionPane.QUESTION_MESSAGE);
-        if(input != null){
-            this.ratingList.set(editIndex, kategoriList[Integer.parseInt(input)]);
+        Object[] rating = {"Semua Umur", "Anak", "Remaja", "Dewasa"};
+        Object option = JOptionPane.showInputDialog(null, "Pilih rating VCD: ", "Menu Rating", JOptionPane.QUESTION_MESSAGE, null, rating, rating[0]);
+        if(option != null){
+            String cnv = (String) option;
+            this.ratingList.set(editIndex, cnv);
             isDone = true;
         }else{
             isDone = false;
@@ -108,10 +106,10 @@ public class AppMethods extends DataVCD {
                 if(input != null){
                     this.stokList.set(editIndex, Integer.parseInt(input));
                     isDone = true;
-                    return isDone;
                 }else{
                     isDone = false;
                 }
+                return isDone;
             }catch(NumberFormatException e){
                 JOptionPane.showMessageDialog(null, "Input tidak valid!", "Check Menu", JOptionPane.WARNING_MESSAGE);
             }

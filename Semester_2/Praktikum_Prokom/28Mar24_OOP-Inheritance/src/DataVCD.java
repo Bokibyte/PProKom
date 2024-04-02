@@ -13,9 +13,9 @@ public class DataVCD {
         ratingList = new ArrayList<>();
         stokList = new ArrayList<>();
         kategoriList = new String[4];
-        kategoriList[0] = "Semua Umur";
-        kategoriList[1] = "Anak";
-        kategoriList[2] = "Remaja";
-        kategoriList[3] = "Dewasa";
+        kategoriList[0] = "SU";
+        kategoriList[1] = "A";
+        kategoriList[2] = "R";
+        kategoriList[3] = "D";
     }
 }
