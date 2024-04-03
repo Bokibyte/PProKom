@@ -2,6 +2,8 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 public class App {
+    // inisialisasi kelas method agar bisa dipakai
+    // biasanya bisa pakai interface + implements kalo cuma "pinjem alat"
     private static AppMethods methods = new AppMethods();
 
     // sengaja dibuat untuk mengatasi umpan balik tombol cancel
@@ -37,6 +39,7 @@ public class App {
         
         // membuat pengulangan untuk loop menu agar bisa menampilkan kembali menu
         // loop berhenti saat 6 menu sudah dimasukan input
+        // if else dibawaah digunakan untuk menskip menu input yang sudah diisi sebelumnya
         while(checkPass < 6){
             if(checkPass == 0){
                 isPass = methods.JOPJudul(indexAt);
@@ -79,6 +82,7 @@ public class App {
     }
 
     // method untuk menampilkan data
+    // menerima parameter berupa int sebagai index data
     public static void showData(int index){
         System.out.print("========================================================");
         System.out.println("\r==| Movie ke-"+(index+1)+" |");
@@ -94,6 +98,9 @@ public class App {
 
     
     public static void main(String[] args) throws Exception {
+
+        // fungsi ini berguna suapaya misahin thread main ke thread EDI
+        // kalo ga di pisahin nanti bakal ada bug, ga stabil biasanya #cmiiw
         SwingUtilities.invokeLater(new Runnable(){
             public void run(){
 

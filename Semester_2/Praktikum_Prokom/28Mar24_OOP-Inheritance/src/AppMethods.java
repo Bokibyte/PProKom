@@ -6,6 +6,8 @@ public class AppMethods extends DataVCD {
     private boolean isDone = false;
 
     // adder
+    // menambahkan data plain yang akan diset
+    // bisa membantu lebih banyak dalam proses aplikasi ini #cmiiw
     public void addData(){
         this.judulList.add("null");
         this.aktorList.add("null");
@@ -13,7 +15,6 @@ public class AppMethods extends DataVCD {
         this.publisherList.add("null");
         this.ratingList.add("null");
         this.stokList.add(0);
-        System.out.println("Data in!");
     }
 
     // remover
