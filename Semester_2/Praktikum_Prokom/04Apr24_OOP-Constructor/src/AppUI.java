@@ -15,7 +15,7 @@ public class AppUI{
         panel = new JPanel();
     }
 
-    public String menu(){
+    public void menu(){
         frame.setTitle("Menu");
 
         JButton toEntry = new JButton("Masukan Data");
@@ -33,14 +33,13 @@ public class AppUI{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         toEntry.addActionListener(e -> {
-            option = "EntryMenu";
+            this.option = "EntryMenu";
             frame.dispose();
         });
         toShow.addActionListener(e -> {
-            option = "ShowMenu";
+            this.option = "ShowMenu";
             frame.dispose();
         });
-        return option;
     }
 
     public void menuAdd(){
