@@ -76,17 +76,25 @@ public class AppUI{
         int n = JOptionPane.showOptionDialog(null, panel, "Form Data", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, option, 0);
 
         if(n==0){
-            String checkNim = tfNIM.getText();
-            Pattern pattern = Pattern.compile("\\d");
-            Matcher matcher = pattern.matcher(checkNim);
-            if(matcher.matches()){
+            String checknim = tfNIM.getText();
+            boolean isDigit = true;
+            for(int i = 0; i < checknim.length(); i++){
+                if(checknim.charAt(i) < '0' || checknim.charAt(i) > '9'){
+                    isDigit = false;
+                    break;
+                }
+            }
+            if(isDigit){
                 tool.addNIM(tfNIM.getText());
                 tool.addNama(tfNama.getText());
                 tool.addAlamat(taAlamat.getText());
                 tool.addJurusan((String) jcbJurusan.getSelectedItem());
                 this.option = "next";
+
+                JOptionPane.showMessageDialog(null, "Data Ditambahkan", "Info", JOptionPane.INFORMATION_MESSAGE);
             }else{
                 JOptionPane.showMessageDialog(null, "NIM Tidak Valid", "Check", JOptionPane.WARNING_MESSAGE);
+                this.option = "next";
             }
 
         }else{
