@@ -1,5 +1,12 @@
+import javax.swing.SwingUtilities;
+
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        
+        AppUI AppGUI = new AppUI();
+        
+        SwingUtilities.invokeLater(() -> {
+            AppGUI.menu();
+        });
     }
 }
