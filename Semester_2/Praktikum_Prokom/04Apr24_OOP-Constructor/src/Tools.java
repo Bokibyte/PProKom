@@ -1,5 +1,9 @@
 public class Tools extends DataMahasiswa{
 
+    public int getSize(){
+        return this.NIM.size();
+    }
+
     // setter
     public void addNIM(String input){
         this.NIM.add(input);
@@ -15,16 +19,17 @@ public class Tools extends DataMahasiswa{
     }
 
     //getter
-    public void getNIM(int index){
-        this.NIM.get(index);
+    public String getNIM(int index){
+        return this.NIM.get(index);
+
     }
-    public void getNama(int index){
-        this.nama.get(index);
+    public String getNama(int index){
+        return this.nama.get(index);
     }
-    public void getAlamat(int index){
-        this.alamat.get(index);
+    public String getAlamat(int index){
+        return this.alamat.get(index);
     }
-    public void getJurusan(int index){
-        this.jurusan.get(index);
+    public String getJurusan(int index){
+        return this.jurusan.get(index);
     }
 }
