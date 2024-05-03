@@ -1,15 +1,5 @@
-import javax.swing.BoxLayout;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
+import javax.swing.*;
 import java.awt.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 
 public class AppUI{
     String option;
@@ -26,6 +16,8 @@ public class AppUI{
             this.option = "toEntry";
         }if(n==1){
             this.option = "toShow";
+        }if(n==-1){
+            this.option = "exit";
         }
     }
 
@@ -98,11 +90,36 @@ public class AppUI{
             }
 
         }else{
-            this.option = "exit";
+            this.option = "close";
         }
     }
     
     public void menuShow(){
-        
+        if(!tool.isEmpty()){
+            JPanel panel = new JPanel();
+            JTextArea jtlist = new JTextArea(30, 50);
+            
+            for(int i = 0; i < tool.getSize(); i++){
+                String template =
+                    "\n "+(i+1)+").\tNIM\t: "+tool.getNIM(i)+
+                    "\n\tNama\t: "+tool.getNama(i)+
+                    "\n\tAlamat\t: "+tool.getAlamat(i)+
+                    "\n\tJurusan\t: "+tool.getJurusan(i)+"\n";
+                jtlist.append(template);
+            }
+            jtlist.setLineWrap(false);
+            jtlist.setEditable(false);
+
+            JScrollPane scList = new JScrollPane(jtlist);
+            
+            panel.setSize(500, 800);
+            panel.add(scList);
+    
+            String[] option = {"Tutup"};
+            JOptionPane.showOptionDialog(null, panel, "Data List", JOptionPane.YES_OPTION, JOptionPane.PLAIN_MESSAGE, null, option, 0);
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "Data Kosong!", "Peringatan", JOptionPane.WARNING_MESSAGE);
+        }
     }
 }

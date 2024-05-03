@@ -3,6 +3,13 @@ public class Tools extends DataMahasiswa{
     public int getSize(){
         return this.NIM.size();
     }
+    public boolean isEmpty(){
+        if(this.NIM.isEmpty()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     // setter
     public void addNIM(String input){
