@@ -1,7 +1,7 @@
 public class OperasiPenjumlahan implements OperasiBilangan {
     
     @Override
-    public double tampil(){
-        return a+b;
+    public void tampil(){
+        System.out.println("Operasi penjumlahan "+a+"+"+b+" = "+(a+b));
     }
 }
