@@ -23,6 +23,7 @@ import jakarta.validation.Valid;
 @RequestMapping("/products")
 public class databaseController {
     
+    // menggunakan @Autowired agar otomtis menginisialisasi dan melakukan Dependency Injection 
     @Autowired
     private databaseRepository repo;
 
@@ -38,7 +39,8 @@ public class databaseController {
     }
 
     // controller untuk menampilkan form data baru
-    //
+    // mendeteksi keluaran "/create"
+    // lalu mengembalikan path html
     @GetMapping("/create")
     public String showCreatePage (Model model){
         productDTO productDto = new productDTO();
@@ -46,6 +48,8 @@ public class databaseController {
         return "products/CreateProduct";
     }
 
+    // menggunakan metode POST untuk melakukan CRUD
+    // disini merupakan Create item lalu menyimpan ke database
     @PostMapping("/create")
     public String createProduct(
             @Valid @ModelAttribute productDTO productDto,
@@ -72,6 +76,8 @@ public class databaseController {
         return "redirect:/products";
     }   
 
+    // mendeteksi keluaran "/edit"
+    // controller untuk melakukan editing data dengan mendeteksi id
     @GetMapping("/edit")
     public String showEditPage(
             Model model,
@@ -99,6 +105,8 @@ public class databaseController {
         return "products/EditProduct";
     }
     
+    // menggunakan POST untuk melakukan CRUD
+    // disini melakukan Update item
     @PostMapping("/edit")
     public String updateProduct(
             Model model,
@@ -131,6 +139,9 @@ public class databaseController {
         return "redirect:/products";
     }
 
+    // mendeteksi keluaran "/delete"
+    // controller untuk menghapus item
+    // disini merupakan Delete
     @GetMapping("/delete")
     public String deleteProduct(
             @RequestParam int id
