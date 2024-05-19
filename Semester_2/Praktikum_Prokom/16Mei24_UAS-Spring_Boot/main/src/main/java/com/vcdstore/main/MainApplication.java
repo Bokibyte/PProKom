@@ -4,9 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- *
- * @author Thinkpad T460 i7
+ * Bisa langsung dijalankan dan melakukan Operasi CRUD
+ * belum coba tanpa ada data dari tabel sql
+ * known bug: warning message dari productDto tidak bisa dipakai di form edit item
+ * Thanks to Zakki udah minjemin laptop buat ngoding
  */
+
 @SpringBootApplication
 public class MainApplication {
 
@@ -14,6 +17,4 @@ public class MainApplication {
 		SpringApplication.run(MainApplication.class, args);
 		
 	}
-	
-
 }
