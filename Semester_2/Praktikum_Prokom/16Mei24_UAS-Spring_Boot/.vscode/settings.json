@@ -1,7 +1,5 @@
 {
     "java.compile.nullAnalysis.mode": "automatic",
-    "csharp.debug.console": "integratedTerminal",
-    "terminal.explorerKind": "integrated",
-    "java.debug.settings.console": "integratedTerminal",
+    "terminal.integrated.": false,
     "java.configuration.updateBuildConfiguration": "interactive",
 }
