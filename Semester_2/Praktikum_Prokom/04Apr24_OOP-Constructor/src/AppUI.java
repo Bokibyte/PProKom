@@ -132,7 +132,7 @@ public class AppUI{
         if(!tool.isEmpty()){
             JPanel panel = new JPanel();
             JTextArea jtList = new JTextArea(30, 50);
-            JScrollPane scList = new JScrollPane();
+            JScrollPane scList = new JScrollPane(jtList);
             
             // Mencetak template dengan data sesuai index hingga akhir data
             // Lalu dimasukan ke jtList
@@ -148,7 +148,7 @@ public class AppUI{
             // Mengaktifkan line warp dan menonaktifkan edit lalu ditambah ke scList
             jtList.setLineWrap(false);
             jtList.setEditable(false);
-            scList.add(jtList);
+            
 
             // Setting ukuran panel dasar
             panel.setSize(500, 800);
