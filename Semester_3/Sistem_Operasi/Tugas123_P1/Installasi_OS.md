@@ -28,6 +28,10 @@ Halo, Saya akan membagikan cara instalasi Linux dengan list distro yang saya sed
   - [Navigasi](#navigasi)
   - [Operasi pada File \& Folder](#operasi-pada-file--folder)
   - [Pengecekan dan Pengelolaan Sistem](#pengecekan-dan-pengelolaan-sistem)
+  - [Operasi Manipulasi Teks](#operasi-manipulasi-teks)
+  - [Pengelolaan Adminstrator dan Izin](#pengelolaan-adminstrator-dan-izin)
+  - [Jaringan](#jaringan)
+  - [Menginstall Beberapa Tools](#menginstall-beberapa-tools)
 
 ---
 
@@ -286,19 +290,19 @@ ya singkatnya itu awal dari direktori linux. Selama instalasi Ubuntu, memilih "/
 
 - membuat folder
     ```
-    mkdir (nama)
+    mkdir (tujuan)
     ```
 - membuat file
     ```
-    touch (nama)
+    touch (tujuan)
     ```
 - menghapus file
     ```
-    rm (nama)
+    rm (tujuan)
     ```
 - menghapus folder
     ```
-    rm -r (nama)
+    rm -r (tujuan)
     ```
 - salin
     ```
@@ -341,6 +345,206 @@ ya singkatnya itu awal dari direktori linux. Selama instalasi Ubuntu, memilih "/
 ![contoh command](mdResource/ubuntu-terminalsysops1.png)
 ![contoh command](mdResource/ubuntu-terminalsysops2.png)
 ![contoh command](mdResource/ubuntu-terminalsysops3.png)
+
+## Operasi Manipulasi Teks
+
+- menampilkan isi file di terminal
+  ```
+  cat (tujuan)
+  ```
+- pencarian
+  ```
+  grep "(kata-kunci)" (tujuan)
+  ```
+- membuka teks editor Nano
+  ```
+  nano (tujuan)
+  ```
+
+> [!NOTE]
+> Dalam ubuntu, `^` adalah `Shift` dan `M-` adlah `Alt`.
+
+![contoh command](mdResource/ubuntu-terminaltextfinal.png)
+![contoh command](mdResource/ubuntu-terminaltextnano.png)
+
+## Pengelolaan Adminstrator dan Izin
+
+- memberikan user izin read
+  ```
+  chmod u+r (tujuan)
+  ```
+- memberikan user izin eksekusi
+  ```
+  chmod u+x (tujuan)
+  ```
+- memberikan user izin write
+  ```
+  chmod u+w (tujuan)
+  ```
+- mengubah seluruh izin file folder pada isi folder (rekursif)
+  ```
+  chmod -R (izin) (tujuan)
+  ```
+
+untuk menghapus izin, cukup ganti tanda `+` menjadi `-`.
+
+jika dengan angka juga bisa dengan ketentuan:
+
+  - `r` = 4 (read)
+  - `w` = 2 (write)
+  - `x` = 1 (execution)
+
+contoh `chmod 755`:
+  
+  - user `rwx` = (4+2+1 = 7)
+  - grup `rx` = (4+1 = 5)
+  - other `rx` = (4+1 = 5)
+
+![contoh command](mdResource/ubuntu-terminalchmodbefore-w.png)
+![contoh command](mdResource/ubuntu-terminalchmod-w.png)
+![contoh command](mdResource/ubuntu-terminalchmod-r.png)
+
+## Jaringan
+
+- tes koneksi (ping)
+  ```
+  ping (alamat)
+  ```
+- informasi jaringan
+  ```
+  ifconfig
+  ```
+- menghubungkan ke ssh
+  ```
+  ssh (user)@(host)
+  ```
+
+![contoh command](mdResource/ubuntu-terminalping.png)
+![contoh command](mdResource/ubuntu-terminalnetifconfig.png)
+
+## Menginstall Beberapa Tools
+
+sebenernya lebih cocok di kali-linux, but why not?
+
+1. **Metasploit**  
+   Metasploit adalah salah satu framework paling populer untuk eksploitasi.
+   ```
+   sudo apt update
+   sudo apt install curl
+   curl https://raw.githubusercontent.com/rapid7/metasploit-framework/master/msfinstall > msfinstall
+   chmod 755 msfinstall
+   sudo ./msfinstall
+   ```
+
+   ![contoh command](mdResource/ubuntu-terminalmetasploit.png)
+
+2. **Nmap**  
+   Nmap digunakan untuk network discovery.
+   ```
+   sudo apt update
+   sudo apt install nmap
+   ```
+
+    ![contoh command](mdResource/ubuntu-terminalnmap.png)
+
+3. **Wireshark**
+   Wireshark adalah alat untuk capture jaringan.
+   ```
+   sudo apt update
+   sudo apt install wireshark
+   sudo dpkg-reconfigure wireshark-common
+   sudo usermod -aG wireshark $(whoami)
+   ```
+
+    ![contoh command](mdResource/ubuntu-terminalwireshark.png)
+
+4. **John the Ripper**
+   John the Ripper digunakan untuk cracking password.
+   ```
+   sudo apt update
+   sudo apt install john
+   ```
+
+    ![contoh command](mdResource/ubuntu-terminaljohn.png)
+
+5. **Aircrack-ng**
+   Aircrack-ng adalah alat untuk hacking jaringan wireless.
+   ```
+   sudo apt update
+   sudo apt install aircrack-ng
+   ```
+
+    ![contoh command](mdResource/ubuntu-terminalaircrack.png)
+
+6. **Burp Suite**
+   Burp Suite adalah platform yang digunakan untuk pengujian keamanan aplikasi web. (GOAT)
+
+   download terlebih dahulu `.sh` nya [disini](https://portswigger.net/burp/releases) dan pilih linux.
+   ```
+   cd Download
+   ls
+   chmod +x (namaFileDidownload)
+   sudo ./(namaFileDidownload)
+   ```
+
+    ![contoh command](mdResource/ubuntu-terminalburp.png)
+
+7. **Nikto**
+   Nikto adalah scanner web server.
+   ```
+   sudo apt update
+   sudo apt install nikto
+   ```
+
+    ![contoh command](mdResource/ubuntu-terminalnikto.png)
+
+8. **sqlmap**
+   Sqlmap adalah tool untuk mengotomatisasi proses deteksi dan eksploitasi SQL Injection.
+   ```
+   sudo apt update
+   sudo apt install sqlmap
+   ```
+
+    ![contoh command](mdResource/ubuntu-terminalsqlmap.png)
+
+9.  **Hydra**
+    Hydra adalah alat untuk brute-force attack.(?)
+    ```
+    sudo apt update
+    sudo apt install hydra
+    ```
+
+    ![contoh command](mdResource/ubuntu-terminalhydra.png)
+
+10. **OWASP ZAP**
+    OWASP ZAP (Zed Attack Proxy) adalah alat ngehek.
+    ```
+    snap install zaproxy --classic
+    ```
+
+    ![contoh command](mdResource/ubuntu-terminalowasp.png)
+
+11. **Gobuster**
+    Gobuster adalah alat untuk brute-forcing URI (file dan direktori) pada situs web.
+    ```
+    sudo apt update
+    sudo apt install gobuster
+    ```
+
+    ![contoh command](mdResource/ubuntu-terminalgobuster.png)
+
+12. **Netcat**
+    Netcat adalah alat untuk membaca dan menulis data melalui koneksi jaringan, digunakan untuk debugging dan ngehek.
+    ```
+    sudo apt update
+    sudo apt install netcat-traditional
+    ```
+    atau
+    ```
+    sudo apt install netcat-openbsd
+    ```
+
+    ![contoh command](mdResource/ubuntu-terminalnetcat.png)
 
 
 [^1]:Distro Linux adalah istilah yang merujuk pada distribusi sistem operasi berbasis Linux. Setiap distro terdiri dari kernel Linux yang merupakan inti dari sistem operasi, ditambah dengan koleksi perangkat lunak, manajer paket, antarmuka pengguna, dan utilitas lain yang dirancang untuk memenuhi kebutuhan tertentu atau audiens tertentu.
