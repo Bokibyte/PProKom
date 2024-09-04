@@ -447,7 +447,7 @@ sebenernya lebih cocok di kali-linux, but why not?
 
     ![contoh command](mdResource/ubuntu-terminalnmap.png)
 
-3. **Wireshark**
+3. **Wireshark**  
    Wireshark adalah alat untuk capture jaringan.
    ```
    sudo apt update
@@ -458,7 +458,7 @@ sebenernya lebih cocok di kali-linux, but why not?
 
     ![contoh command](mdResource/ubuntu-terminalwireshark.png)
 
-4. **John the Ripper**
+4. **John the Ripper**  
    John the Ripper digunakan untuk cracking password.
    ```
    sudo apt update
@@ -467,7 +467,7 @@ sebenernya lebih cocok di kali-linux, but why not?
 
     ![contoh command](mdResource/ubuntu-terminaljohn.png)
 
-5. **Aircrack-ng**
+5. **Aircrack-ng**  
    Aircrack-ng adalah alat untuk hacking jaringan wireless.
    ```
    sudo apt update
@@ -476,7 +476,7 @@ sebenernya lebih cocok di kali-linux, but why not?
 
     ![contoh command](mdResource/ubuntu-terminalaircrack.png)
 
-6. **Burp Suite**
+6. **Burp Suite**  
    Burp Suite adalah platform yang digunakan untuk pengujian keamanan aplikasi web. (GOAT)
 
    download terlebih dahulu `.sh` nya [disini](https://portswigger.net/burp/releases) dan pilih linux.
@@ -489,7 +489,7 @@ sebenernya lebih cocok di kali-linux, but why not?
 
     ![contoh command](mdResource/ubuntu-terminalburp.png)
 
-7. **Nikto**
+7. **Nikto**  
    Nikto adalah scanner web server.
    ```
    sudo apt update
@@ -498,7 +498,7 @@ sebenernya lebih cocok di kali-linux, but why not?
 
     ![contoh command](mdResource/ubuntu-terminalnikto.png)
 
-8. **sqlmap**
+8. **sqlmap**  
    Sqlmap adalah tool untuk mengotomatisasi proses deteksi dan eksploitasi SQL Injection.
    ```
    sudo apt update
@@ -507,7 +507,7 @@ sebenernya lebih cocok di kali-linux, but why not?
 
     ![contoh command](mdResource/ubuntu-terminalsqlmap.png)
 
-9.  **Hydra**
+9.  **Hydra**  
     Hydra adalah alat untuk brute-force attack.(?)
     ```
     sudo apt update
@@ -516,7 +516,7 @@ sebenernya lebih cocok di kali-linux, but why not?
 
     ![contoh command](mdResource/ubuntu-terminalhydra.png)
 
-10. **OWASP ZAP**
+10. **OWASP ZAP**  
     OWASP ZAP (Zed Attack Proxy) adalah alat ngehek.
     ```
     snap install zaproxy --classic
@@ -524,7 +524,7 @@ sebenernya lebih cocok di kali-linux, but why not?
 
     ![contoh command](mdResource/ubuntu-terminalowasp.png)
 
-11. **Gobuster**
+11. **Gobuster**  
     Gobuster adalah alat untuk brute-forcing URI (file dan direktori) pada situs web.
     ```
     sudo apt update
@@ -533,7 +533,7 @@ sebenernya lebih cocok di kali-linux, but why not?
 
     ![contoh command](mdResource/ubuntu-terminalgobuster.png)
 
-12. **Netcat**
+12. **Netcat**  
     Netcat adalah alat untuk membaca dan menulis data melalui koneksi jaringan, digunakan untuk debugging dan ngehek.
     ```
     sudo apt update
