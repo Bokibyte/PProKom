@@ -27,6 +27,7 @@ Halo, Saya akan membagikan cara instalasi Linux dengan list distro yang saya sed
 - [Command Testing](#command-testing)
   - [Navigasi](#navigasi)
   - [Operasi pada File \& Folder](#operasi-pada-file--folder)
+  - [Pengecekan dan Pengelolaan Sistem](#pengecekan-dan-pengelolaan-sistem)
 
 ---
 
@@ -283,8 +284,64 @@ ya singkatnya itu awal dari direktori linux. Selama instalasi Ubuntu, memilih "/
 
 ## Operasi pada File & Folder
 
-> [!TIP]
-> comingsoon ><
+- membuat folder
+    ```
+    mkdir (nama)
+    ```
+- membuat file
+    ```
+    touch (nama)
+    ```
+- menghapus file
+    ```
+    rm (nama)
+    ```
+- menghapus folder
+    ```
+    rm -r (nama)
+    ```
+- salin
+    ```
+    cp (nama) (tujuan)
+    ```
+- memindahkan
+    ```
+    mv (nama) (tujuan)
+    ```
+- mengganti nama
+    ```
+    cp (nama) (namabaru)
+    ```
+
+![contoh command](mdResource/ubuntu-terminalfilefolder.png)
+
+## Pengecekan dan Pengelolaan Sistem
+
+- rincian penggunaan disk
+  ```
+  df -h
+  ```
+- mengecek informasi sistem
+  ```
+  uname -a
+  ```
+- upgrade semua paket
+  ```
+  sudo apt upgrade
+  ```
+- update daftar paket tersedia
+  ```
+  sudo apt update
+  ```
+- task manager ala ubuntu
+  ```
+  top
+  ```
+
+![contoh command](mdResource/ubuntu-terminalsysops1.png)
+![contoh command](mdResource/ubuntu-terminalsysops2.png)
+![contoh command](mdResource/ubuntu-terminalsysops3.png)
+
 
 [^1]:Distro Linux adalah istilah yang merujuk pada distribusi sistem operasi berbasis Linux. Setiap distro terdiri dari kernel Linux yang merupakan inti dari sistem operasi, ditambah dengan koleksi perangkat lunak, manajer paket, antarmuka pengguna, dan utilitas lain yang dirancang untuk memenuhi kebutuhan tertentu atau audiens tertentu.
 [^2]: **EXT4 (Fourth Extended Filesystem)** adalah versi terbaru dari keluarga sistem file EXT yang biasa digunakan di Linux. Bisa dibilang ini adalah sistem file yang paling sering dipakai di komputer Linux saat ini. EXT4 punya banyak kelebihan dibanding versi sebelumnya, seperti mendukung file yang lebih besar, bekerja lebih cepat, dan lebih stabil. 
