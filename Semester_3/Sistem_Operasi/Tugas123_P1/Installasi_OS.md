@@ -546,6 +546,10 @@ sebenernya lebih cocok di kali-linux, but why not?
 
     ![contoh command](mdResource/ubuntu-terminalnetcat.png)
 
+> [!NOTE]
+> Selalu update sistem kamu sebelum menginstal tools baru untuk memastikan bahwa kamu memiliki versi terbaru dari paket-paket yang akan diinstal.
+
+---
 
 [^1]:Distro Linux adalah istilah yang merujuk pada distribusi sistem operasi berbasis Linux. Setiap distro terdiri dari kernel Linux yang merupakan inti dari sistem operasi, ditambah dengan koleksi perangkat lunak, manajer paket, antarmuka pengguna, dan utilitas lain yang dirancang untuk memenuhi kebutuhan tertentu atau audiens tertentu.
 [^2]: **EXT4 (Fourth Extended Filesystem)** adalah versi terbaru dari keluarga sistem file EXT yang biasa digunakan di Linux. Bisa dibilang ini adalah sistem file yang paling sering dipakai di komputer Linux saat ini. EXT4 punya banyak kelebihan dibanding versi sebelumnya, seperti mendukung file yang lebih besar, bekerja lebih cepat, dan lebih stabil. 
