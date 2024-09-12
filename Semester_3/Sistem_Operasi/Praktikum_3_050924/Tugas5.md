@@ -47,3 +47,5 @@ SK3C
 10. Buatlah **link** dari file dataku ke file **dataku.ini** dan file **dataku.juga** dan dengan perintah **list** perhatikan berapa **link** yang terjadi ?
  
     ![No.10 Command](Resources/no10.png)
+
+![y](Resources/y.gif)
