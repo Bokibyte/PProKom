@@ -2,6 +2,9 @@
 ---
 ## Soal
 
+> file **baru** -> **filetype**
+> karena keliru :D
+> 
 1. Lihat daftar secara lengkap pada direktori aktif, belokkan tampilan standard output ke file baru.
    
    ![img1](res/1.png)
