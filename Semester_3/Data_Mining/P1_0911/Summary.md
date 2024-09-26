@@ -22,4 +22,5 @@ Metode:
     - Mode (Modus): Nilai yang paling sering muncul dalam data.
     - Variance dan Standard Deviation: Mengukur sebaran atau dispersi data.
 
-- d
+- diskriminasi
+- supremise - data berlabel
