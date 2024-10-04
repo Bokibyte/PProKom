@@ -82,4 +82,4 @@ Biasanya terkendala seperti refused, tidak bisa terhubung, atau sebagainya bisa 
     ```
     command `ufw allow` memiliki fungsi lain seperti `ssh`,`https`, `from <ip>`, `from <ip> to any port <port>`.
 
-Setelah problem selesai (semoga :smiley), jangan lupa direstart SSH nya.
+Setelah problem selesai (semoga 😄), jangan lupa direstart SSH nya.
