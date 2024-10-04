@@ -68,7 +68,11 @@ Biasanya terkendala seperti refused, tidak bisa terhubung, atau sebagainya bisa 
 
     Setelah itu lalu restart SSH.
 
-2. Jika problemnya Firewall, cek dahulu apakah firewall aktif dengan `sudo ufw status`. jika on, bisa saja dimatikan (opsional) dengan:
+2. Jika problemnya Firewall, cek dahulu apakah firewall aktif dengan 
+   ```
+   sudo ufw status
+   ```
+   jika on, bisa saja dimatikan (opsional) dengan:
    ```
     ufw disable
    ```
@@ -77,3 +81,5 @@ Biasanya terkendala seperti refused, tidak bisa terhubung, atau sebagainya bisa 
     ufw allow 22/tcp
     ```
     command `ufw allow` memiliki fungsi lain seperti `ssh`,`https`, `from <ip>`, `from <ip> to any port <port>`.
+
+Setelah problem selesai (semoga :smiley), jangan lupa direstart SSH nya.
